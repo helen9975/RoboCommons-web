@@ -24,6 +24,7 @@
     <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>RoboCommons</a>
     <div class="nav-links">
       <a href="#overview">Overview</a>
+      <a href="#build">Replay</a>
       <a href="#method">Method</a>
       <a href="#repository">Tasks</a>
       <a href="#reliability">Reliability</a>
@@ -39,21 +40,32 @@
   <div class="mosaic" id="mosaic" aria-hidden="true"></div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="eyebrow"><span class="dot"></span>Language-driven, multi-framework robot evaluation</p>
+    <p class="eyebrow"><span class="dot"></span>A language-driven harness for open-ended robot evaluation</p>
     <h1 class="title">Robo<span class="title-accent">Commons</span></h1>
     <p class="subtitle">Open, Evolving Evaluation for <em>Generalist Robot Policies</em></p>
 
-    <!-- TODO(release): replace with the camera-ready author list and affiliations. -->
+    <!-- Homepage links are the ones the authors' own pages use; no confirmed page for E. Gubarev, C. Tan or M. Argus. -->
     <p class="authors">
-      <span>Author One<sup>1</sup></span>
-      <span>Author Two<sup>1</sup></span>
-      <span>Author Three<sup>2</sup></span>
-      <span>Author Four<sup>1</sup></span>
+      <span><a href="https://helen9975.github.io/">Yi Ru Wang</a><sup>1,2†</sup></span>
+      <span><a href="https://carteruh.github.io/">Carter Ung</a><sup>1,2,3†</sup></span>
+      <span>Evan Gubarev<sup>1,2</sup></span>
+      <span>Christopher Tan<sup>1</sup></span>
+      <span>Max Argus<sup>2</sup></span>
+      <span><a href="https://www.cs.toronto.edu/~florian/">Florian Shkurti</a><sup>2,4</sup></span>
+      <span><a href="https://homangab.github.io/">Homanga Bharadhwaj</a><sup>3</sup></span>
+      <span><a href="https://goodrobot.ai/">Siddhartha Srinivasa</a><sup>*1</sup></span>
+      <span><a href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>*1,2</sup></span>
     </p>
-    <p class="affils"><span><sup>1</sup>Affiliation One</span><span><sup>2</sup>Affiliation Two</span></p>
+    <p class="affils">
+      <span><sup>1</sup>University of Washington</span>
+      <span><sup>2</sup>Allen Institute for AI</span>
+      <span><sup>3</sup>Johns Hopkins University</span>
+      <span><sup>4</sup>University of Toronto</span>
+    </p>
+    <p class="affils affils-notes"><span><sup>†</sup>Equal contribution</span><span><sup>*</sup>Equal advising</span></p>
 
     <div class="links">
-      <!-- TODO(release): point these at the arXiv abs page, the PDF, the code repo, the dataset and the video. -->
+      <!-- TODO(release): point these at the arXiv abs page, the PDF, the code repo and the dataset. -->
       <a class="btn btn-light" href="#" data-todo="paper"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15a0 0 0 0 1 0 0H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5"/><path d="M8 13h8M8 17h6"/></svg>Paper</a>
       <a class="btn" href="#" data-todo="arxiv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg>arXiv</a>
       <a class="btn" href="#" data-todo="code"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a>
@@ -67,11 +79,11 @@
 <!-- ============================================================ STATS -->
 <section class="stats" aria-label="Key numbers">
   <div class="stats-inner">
-    <div class="stat"><b data-count="300" data-suffix="+">300+</b><span>verified tasks authored from language</span></div>
-    <div class="stat"><b data-count="3">3</b><span>simulation frameworks, one workflow</span></div>
-    <div class="stat"><b data-count="98.5" data-decimals="1" data-suffix="%">98.5%</b><span>of verified tasks judged correct by humans</span></div>
-    <div class="stat"><b data-count="42576" data-sep="1">42,576</b><span>evaluation episodes, 8 policies</span></div>
-    <div class="stat"><b data-count="83.4" data-decimals="1">83.4</b><span>SUS usability score (N = 26)</span></div>
+    <div class="stat"><b data-count="300" data-suffix="+">300+</b><span>executable tasks generated from language</span></div>
+    <div class="stat"><b data-count="3">3</b><span>manipulation frameworks, one authoring workflow</span></div>
+    <div class="stat"><b data-count="98.5" data-decimals="1" data-suffix="%">98.5%</b><span>of verified tasks judged correct by human reviewers</span></div>
+    <div class="stat"><b data-count="42576" data-sep="1">42,576</b><span>evaluation episodes across 8 policies</span></div>
+    <div class="stat"><b data-count="83.4" data-decimals="1">83.4</b><span>SUS usability score in a 26-participant study</span></div>
   </div>
 </section>
 
@@ -80,6 +92,18 @@
 <!-- ============================================================ OVERVIEW -->
 <section class="section" id="overview">
   <div class="wrap">
+    <div class="why reveal">
+      <div class="section-head">
+        <p class="kicker">Motivation</p>
+        <h2>How do we add new scenarios as capabilities grow?</h2>
+      </div>
+      <ol class="why-beats">
+        <li><b>Policies are becoming generalists.</b> Robot learning is shifting from specialized policies toward models that follow diverse instructions, manipulate many objects, and operate across a growing range of environments.</li>
+        <li><b>Evaluation has remained static.</b> Benchmarks have been critical for measuring progress, but a finite task suite can only test the capabilities and failure modes anticipated by its designers.</li>
+        <li><b>Evaluation should evolve alongside policies.</b> With RoboCommons, users describe the behaviors they wish to evaluate in natural language, and the resulting tasks accumulate in a shared repository.</li>
+      </ol>
+    </div>
+
     <figure class="figure figure-hero reveal">
       <img src="static/img/fig1_overview.jpg" alt="RoboCommons overview: natural-language behavior descriptions become executable tasks in MolmoSpaces, LIBERO and RoboEval, accumulating in a shared repository." loading="lazy" width="2400" height="1052">
       <figcaption><b>Open-ended evaluation that grows alongside policy capabilities.</b> RoboCommons translates natural-language descriptions of behaviors users wish to evaluate (center) into executable tasks within existing manipulation frameworks: MolmoSpaces (left), LIBERO (top right) and RoboEval (bottom right). Contributions accumulate in a shared, searchable repository, so policies can be evaluated on targeted task subsets that probe particular capabilities and failure modes.</figcaption>
@@ -93,20 +117,57 @@
     <div class="pillars reveal">
       <article class="pillar">
         <span class="pillar-n">01</span>
-        <h3>Open-ended orchestration</h3>
-        <p>A language-driven harness that separates <em>what</em> you want to evaluate from <em>how</em> each framework implements it, validated on three MuJoCo frameworks.</p>
+        <h3>Open-ended evaluation orchestration</h3>
+        <p>A language-driven harness that separates evaluation intent from framework-specific task implementation, validated across three manipulation frameworks.</p>
       </article>
       <article class="pillar">
         <span class="pillar-n">02</span>
-        <h3>A growing repository</h3>
-        <p>300+ executable, verified manipulation tasks. Diversity keeps rising as the repository grows and as more frameworks contribute.</p>
+        <h3>A growing evaluation repository</h3>
+        <p>More than 300 executable manipulation tasks. Increasing the size of the repository continues to expand evaluation diversity.</p>
       </article>
       <article class="pillar">
         <span class="pillar-n">03</span>
         <h3>Capability-oriented evaluation</h3>
-        <p>Targeted task families expose gaps that one aggregate score hides: the same policy spans 0.9% to 66.4% across families.</p>
+        <p>Targeted task subsets expose distinct gaps in policy performance that aggregate scores obscure. On RoboEval Blocks, MolmoAct2 ranges from 0.9% to 66.4% across families.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================ REPLAY -->
+<section class="section section-dark" id="build">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker kicker-light">Scene construction</p>
+      <h2>A recorded generation run, replayed in 3D</h2>
+      <p class="lede">We replay the recorded generation runs behind the clutter ladder in Fig.&nbsp;5, where the teacup-on-tray goal is held fixed while distractors are added. You can orbit the scene, scrub through the run, or switch to a variant with more distractors.</p>
+    </div>
+    <div class="rp" id="rp">
+      <div class="rp-tabs" role="tablist" aria-label="Task variant"></div>
+      <div class="rp-prompt"><span class="rp-prompt-label">Prompt</span><p><span class="rp-prompt-text"></span><span class="rp-caret" aria-hidden="true"></span></p></div>
+      <div class="rp-main">
+        <div class="rp-view">
+          <canvas class="rp-canvas" aria-label="Interactive 3D view of the scene being built"></canvas>
+          <div class="rp-tags" aria-hidden="true"></div>
+          <div class="rp-load" aria-hidden="true"><span>Loading scene</span><i></i></div>
+          <span class="rp-hint">Drag to orbit, then scroll to zoom</span>
+          <button class="rp-recenter" type="button" hidden>Follow the replay</button>
+        </div>
+        <aside class="rp-side">
+          <ol class="rp-steps"></ol>
+          <div class="rp-detail" aria-live="off"></div>
+        </aside>
+      </div>
+      <div class="rp-bar">
+        <button class="rp-play" type="button" aria-label="Play" data-state="play"></button>
+        <div class="rp-track">
+          <div class="rp-ticks" aria-hidden="true"></div>
+          <input class="rp-range" type="range" min="0" max="1000" value="0" step="1" aria-label="Replay position">
+        </div>
+        <div class="rp-clockwrap"><span class="rp-clock">0:00</span><small>of real run time</small></div>
+      </div>
+    </div>
+    <p class="rp-note">The prompts, plans, generated code, stage timings, validator verdicts, object poses and scene geometry are all read from the recorded runs. Only the motion between recorded poses and the playback speed are animated, and the ceiling is removed for visibility.</p>
   </div>
 </section>
 
@@ -115,14 +176,12 @@
   <div class="wrap">
     <div class="section-head">
       <p class="kicker kicker-light">Video</p>
-      <h2>RoboCommons in a minute</h2>
+      <h2>RoboCommons in two minutes</h2>
     </div>
-    <!-- TODO(release): swap the poster/placeholder for the explainer (YouTube iframe or static/videos/robocommons.mp4). -->
     <div class="video-frame reveal" id="explainer">
-      <div class="video-placeholder">
-        <div class="vp-grid" id="vp-grid" aria-hidden="true"></div>
-        <div class="vp-label"><span class="play" aria-hidden="true"></span>Explainer video coming soon</div>
-      </div>
+      <video controls playsinline preload="none" poster="static/videos/robocommons_poster.jpg" aria-label="RoboCommons explainer video, two minutes, no sound">
+        <source src="static/videos/robocommons.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -132,15 +191,16 @@
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">Method</p>
-      <h2>From a sentence to a verified, framework-native task</h2>
-      <p class="lede">A user describes a behavior and picks a framework, scene and assets. A VLM agent, scaffolded with skills and simulator tools, writes the task: instruction, assets and surfaces, a randomized initial state and a goal predicate&nbsp;<i>G</i>. Every task must compile, run, settle without collisions, be reachable, and satisfy <i>G</i>(<i>s</i><sub>initial</sub>)&nbsp;=&nbsp;0 and <i>G</i>(<i>s</i><sub>goal</sub>)&nbsp;=&nbsp;1 before it enters the repository.</p>
+      <h2>From a language request to a verified, framework-native task</h2>
+      <p class="lede">A user specifies a behavior and selects a framework, scene and assets. A VLM agent, scaffolded with skills and simulator tools, defines the instruction, relevant assets and surfaces, goal condition&nbsp;<i>G</i> and randomized initial state. Before a task is admitted to the repository, it must compile, run in the simulator, settle without collisions, remain reachable, and satisfy <i>G</i>(<i>s</i><sub>initial</sub>)&nbsp;=&nbsp;0 and <i>G</i>(<i>s</i><sub>goal</sub>)&nbsp;=&nbsp;1.</p>
     </div>
 
     <ol class="steps reveal">
-      <li class="step"><span class="step-i">1</span><h3>Author</h3><p>Describe the behavior in plain language, then choose the framework, scene, fixtures and objects.</p></li>
-      <li class="step"><span class="step-i">2</span><h3>Specify</h3><p>The agent defines the policy instruction, assets, surfaces, goal condition and initial-state distribution, using templates for supported relations and writing new logic when needed.</p></li>
-      <li class="step"><span class="step-i">3</span><h3>Ground</h3><p>Measured placement regions on real support surfaces; seeded resets sampled inside the robot's workspace.</p></li>
-      <li class="step"><span class="step-i">4</span><h3>Validate &amp; repair</h3><p>Compile → simulate → stable, collision-free, IK-reachable → goal reachable and stable. Any failure is diagnosed, repaired and re-checked.</p></li>
+      <li class="step"><span class="step-i">1</span><h3>Describe</h3><p>The user describes the behavior they want to evaluate in natural language and selects a framework, scene, fixtures and objects.</p></li>
+      <li class="step"><span class="step-i">2</span><h3>Ground</h3><p>The agent defines the policy instruction, task-relevant assets and goal condition&nbsp;<i>G</i>, then measures the usable support surfaces within the robot's workspace. Templates cover supported relations, and the agent authors new logic when they do not apply.</p></li>
+      <li class="step"><span class="step-i">3</span><h3>Place</h3><p>Assets are placed in measured regions on those surfaces, and a seeded reset procedure samples initial states within the robot's reach.</p></li>
+      <li class="step"><span class="step-i">4</span><h3>Verify</h3><p>The task must compile, run in simulation, settle without collisions, be reachable through inverse kinematics, and satisfy <i>G</i>&nbsp;=&nbsp;0 at the start and <i>G</i>&nbsp;=&nbsp;1 at the goal across seeded resets. Failed checks trigger repair and revalidation.</p></li>
+      <li class="step"><span class="step-i">5</span><h3>Share</h3><p>The validated task joins the shared repository, where it runs in its framework's native simulator against any policy.</p></li>
     </ol>
 
     <figure class="figure reveal">
@@ -165,8 +225,8 @@
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">Three frameworks, one workflow</p>
-      <h2>Builds on the simulators the community already uses</h2>
-      <p class="lede">RoboCommons does not replace existing infrastructure. To connect a framework, the agent reads its code and examples and exposes native operations for scene loading, asset discovery, simulation, success checking and evaluation.</p>
+      <h2>RoboCommons builds on existing simulation infrastructure</h2>
+      <p class="lede">Rather than replacing the simulation infrastructure the community has already built, RoboCommons provides a common authoring workflow and delegates execution to framework-specific backends. To connect a new framework, the agent reads its code and examples and exposes native operations for scene loading, asset discovery, simulation, success checking and evaluation.</p>
     </div>
     <div class="fw-grid" id="fw-grid"></div>
   </div>
@@ -177,8 +237,8 @@
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">The repository</p>
-      <h2>Browse all 300 generated tasks</h2>
-      <p class="lede">Every task below was authored from a language request, verified, and evaluated against five policies. Filter by framework or capability family, search the instructions, hover to watch a rollout, and open a task for its generator prompt, success predicate and per-policy results.</p>
+      <h2>One shared task repository</h2>
+      <p class="lede">Requests from anyone, anywhere, join one shared task repository. Every task below was generated from a language request, passed verification, and was evaluated against five policies. You can filter by framework or capability family, search the instructions, hover over a task to watch a rollout, and open it to see the generator request, success predicate and per-policy results.</p>
     </div>
 
     <div class="toolbar" id="toolbar">
@@ -207,8 +267,8 @@
 <section class="section section-tint" id="reliability">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Accessibility &amp; reliability</p>
-      <h2>Easier to author. Reliable to execute.</h2>
+      <p class="kicker">Accessibility and reliability</p>
+      <h2>Authoring is easier, and verified tasks are reliable</h2>
     </div>
 
     <div class="two-col">
@@ -237,7 +297,7 @@
           <div><b>98.5%</b><span>of passing tasks are correct (338 / 343)</span></div>
           <div><b>93.6%</b><span>of correct tasks are retained</span></div>
         </div>
-        <p class="note">Errors are conservative: only 5 incorrect tasks pass, while 23 correct ones are rejected. Rejecting a correct task costs throughput; accepting a wrong one would corrupt the benchmark.</p>
+        <p class="note">Verification errors are conservative, favoring false rejection over false acceptance: only 5 incorrect tasks pass, compared with 23 correct tasks that are rejected. Accepting an incorrect task introduces a faulty task into evaluation, whereas rejecting a correct task mainly reduces throughput.</p>
       </div>
     </div>
   </div>
@@ -247,9 +307,9 @@
 <section class="section" id="diversity">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Growth &amp; diversity</p>
-      <h2>Broader sources, more diverse evaluation</h2>
-      <p class="lede">We measure diversity of the 300 tasks with the Vendi score (an effective number of distinct samples) over language instructions, rendered scene and goal appearance, goal-relative visual change, and joint-space motion. At a fixed budget of 100 tasks, drawing from three domains instead of one increases diversity on every axis, and least of all on language: instructions alone understate how broad an evaluation set is.</p>
+      <p class="kicker">Growth and diversity</p>
+      <h2>Source breadth expands coverage at a fixed task budget</h2>
+      <p class="lede">We measure the diversity of the 300 tasks with the Vendi score, an effective count of distinct samples, over four aspects: language instruction, scene and goal appearance, goal-relative visual change, and joint motion. At a fixed budget of 100 tasks, drawing from three domains instead of one increases diversity on every aspect. The gain is smallest for language, so instruction diversity captures only part of the expanded coverage.</p>
     </div>
 
     <div class="ratio-row reveal">
@@ -271,15 +331,15 @@
   <div class="wrap">
     <div class="section-head">
       <p class="kicker kicker-light">Diagnostic evaluation</p>
-      <h2>Aggregate scores hide capability gaps</h2>
-      <p class="lede">We group tasks into five capability families and evaluate eight generalist policies: 15 policy–framework combinations, 42,576 episodes. No combination exceeds 24.8% overall, yet family-level scores separate shared limitations (semantic grounding: no policy above 1.5% anywhere) from families that discriminate between policies (clutter: up to a 66-point spread).</p>
+      <h2>Task families distinguish shared limitations from policy-specific profiles</h2>
+      <p class="lede">We organize tasks into five capability families and evaluate eight generalist policies across 15 policy–framework combinations and 42,576 episodes. Overall success does not exceed 24.8% in any combination, but family-level scores reveal distinct profiles. Semantic grounding is a shared limitation, with no policy above 1.5% in any framework, while clutter produces the largest between-policy spread, up to 66 percentage points.</p>
     </div>
 
     <div class="explorer reveal" id="explorer">
       <div class="seg" id="exp-domains" role="tablist" aria-label="Framework"></div>
       <div class="table-wrap">
         <table class="heat" id="exp-table">
-          <caption>Episode-weighted success rate (%) ± binomial standard error. Overall is computed over all evaluated episodes. Click a cell to see rollouts.</caption>
+          <caption>Episode-weighted success rate (%) ± binomial standard error. Overall is computed over all evaluated episodes. Select a cell to see its rollouts.</caption>
         </table>
       </div>
       <div class="exp-detail" id="exp-detail" aria-live="polite"></div>
@@ -292,16 +352,16 @@
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">Linked variations</p>
-      <h2>Change one factor, watch performance move</h2>
-      <p class="lede">Because tasks are authored from language, it is cheap to write a family of linked variants that hold the goal fixed and vary one factor. These ladders locate exactly where a policy breaks.</p>
+      <h2>Linked variations show where performance deteriorates</h2>
+      <p class="lede">Because tasks are authored from language, it is inexpensive to write families of linked variants that hold the goal fixed and vary a single factor. These comparisons provide finer resolution than family averages.</p>
     </div>
 
     <div class="ladder reveal" id="ladder"></div>
 
     <div class="facts reveal">
-      <div class="fact"><b>56.4% → 7.6%</b><span>Horizon: adding a second placement to the tray task (54.8% → 6.4% on the basket task).</span></div>
-      <div class="fact"><b>36–58% → 0%</b><span>Affordance: four policies partly close the microwave door; every policy fails every episode of near-complete closure.</span></div>
-      <div class="fact"><b>40%</b><span>Spatial: MolmoAct2 on “between”, which no other policy solves at all.</span></div>
+      <div class="fact"><b>56.4% → 7.6%</b><span>Horizon: adding a second placement reduces average success on the tray task, and from 54.8% to 6.4% on the basket task.</span></div>
+      <div class="fact"><b>36–58% → 0%</b><span>Affordance: four policies achieve 36–58% success at partial microwave closure, while every policy fails every episode of near-complete closure.</span></div>
+      <div class="fact"><b>40%</b><span>Spatial relations: MolmoAct2 succeeds on “between”, which no other policy solves.</span></div>
     </div>
 
     <figure class="figure reveal">
@@ -315,9 +375,9 @@
 <section class="section section-tint" id="sim2real">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Simulation → hardware</p>
-      <h2>Task difficulty ordering transfers to the real robot</h2>
-      <p class="lede">We reconstruct a real tabletop scene in RoboCommons, matching its objects, layout and camera pose, and evaluate MolmoAct2 and π0.5 on six tasks in both simulation and the real world.</p>
+      <p class="kicker">Simulation-to-real validation</p>
+      <h2>Relative task difficulty agrees across simulation and hardware</h2>
+      <p class="lede">We reconstruct a real tabletop scene in RoboCommons, matching its object set, layout and camera pose, and evaluate MolmoAct2 and π0.5 on six tasks in both simulation and the real world. The results provide initial evidence that relative difficulty can persist across simulation and hardware for the tested tasks.</p>
     </div>
 
     <div class="s2r-videos reveal">
@@ -350,12 +410,12 @@
       <p class="kicker">Citation</p>
       <h2>BibTeX</h2>
     </div>
-    <!-- TODO(release): final author list / venue. -->
+    <!-- TODO(release): final venue. -->
     <div class="bib">
       <button class="copy" id="copy-bib" type="button">Copy</button>
 <pre id="bibtex">@article{robocommons2026,
   title   = {RoboCommons: Open, Evolving Evaluation for Generalist Robot Policies},
-  author  = {Author One and Author Two and Author Three and Author Four},
+  author  = {Wang, Yi Ru and Ung, Carter and Gubarev, Evan and Tan, Christopher and Argus, Max and Shkurti, Florian and Bharadhwaj, Homanga and Srinivasa, Siddhartha and Fox, Dieter},
   journal = {arXiv preprint},
   year    = {2026}
 }</pre>
@@ -380,6 +440,8 @@
   </div>
 </dialog>
 
+<script type="importmap">{"imports":{"three":"./static/js/vendor/three.module.min.js","three/addons/controls/OrbitControls.js":"./static/js/vendor/OrbitControls.js","three/addons/environments/RoomEnvironment.js":"./static/js/vendor/RoomEnvironment.js"}}</script>
 <script src="static/js/main.js" defer></script>
+<script src="static/js/replay.js" defer></script>
 </body>
 </html>

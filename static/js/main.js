@@ -100,7 +100,6 @@
     .then(([data, heroClips, explorer]) => {
       buildMosaic(heroClips);
       const byId = Object.fromEntries(data.tasks.map(t => [t.id, t]));
-      buildPlaceholder(data);
       buildDemo(data, byId);
       buildFrameworks(data, byId);
       buildRepository(data, byId);
@@ -137,13 +136,6 @@
     requestAnimationFrame(() => m.classList.add('ready'));
     new IntersectionObserver(([e]) => $$('video', m).forEach(v => (e.isIntersecting && !reduceMotion ? v.play().catch(() => {}) : v.pause())))
       .observe(hero);
-  }
-
-  function buildPlaceholder(data) {
-    const g = $('#vp-grid');
-    if (!g) return;
-    const picks = data.tasks.filter((_, i) => i % 9 === 0).slice(0, 24);
-    g.innerHTML = picks.map(t => `<img src="static/img/tasks/${t.id}/goal.jpg" alt="" loading="lazy">`).join('');
   }
 
   // ------------------------------------------------------------------ shared bits
@@ -208,9 +200,9 @@
   // ------------------------------------------------------------------ frameworks
   const FW = [
     { lane: 'kitchen', name: 'MolmoSpaces', sub: 'Kitchen', hero: 'K004', strip: ['K037', 'K057', 'K091', 'K049'],
-      text: 'Full procedurally generated kitchens with articulated fixtures. RoboCommons uses the framework\'s own occupancy-map robot placement and IK reachability checks.' },
+      text: 'Procedurally generated kitchens with articulated fixtures. RoboCommons uses the framework\'s own occupancy-map robot placement and inverse-kinematics reachability checks.' },
     { lane: 'libero', name: 'LIBERO', sub: 'Tabletop & kitchen scenes', hero: 'L061', strip: ['L009', 'L039', 'L057', 'L079'],
-      text: 'Tasks compile to native BDDL scene definitions and run in the standard LIBERO / robosuite evaluation loop.' },
+      text: 'Tasks compile to native BDDL scene definitions and run in the standard LIBERO and robosuite evaluation loop.' },
     { lane: 'blocks', name: 'RoboEval', sub: 'Blocks', hero: 'B061', strip: ['B032', 'B015', 'B097', 'B040'],
       text: 'A structured tabletop with colored and numbered cubes and goal patches, suited to precise spatial and semantic predicates.' },
   ];
@@ -455,7 +447,7 @@
           <div class="rung-v"><b>${Math.round(pct(s, eps))}%</b><span>MolmoBot, ${s} / ${eps} episodes</span></div>
           <div class="dots">${Array.from({ length: eps }, (_, i) => `<i class="${i < s ? 'on' : ''}"></i>`).join('')}</div>
         </div></div>`;
-    }).join('') + '<p class="ladder-cap">Clutter ladder in MolmoSpaces: the goal is held fixed while distractors are added. Shown: rollouts of MolmoBot, the strongest kitchen policy.</p>';
+    }).join('') + '<p class="ladder-cap">In the MolmoSpaces clutter ladder, the teacup-on-tray goal is held fixed while distractors are added. Rollouts are from MolmoBot, the strongest kitchen policy.</p>';
     watchVideos($('#ladder'));
   }
 
